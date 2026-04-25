@@ -56,7 +56,10 @@ export default function Sidebar() {
                 to="/DataGrows"
                 className="p-2 bg-[#5a4be6] rounded-xl w-12/12  flex gap-3 items-center justify-center  "
               >
-                <h1 className="font-bold text-[18px]"> الذهاب الي تحليل النمو</h1>
+                <h1 className="font-bold text-[18px]">
+                  {" "}
+                  الذهاب الي تحليل النمو
+                </h1>
               </Link>
               <button
                 to="/Dashboard"
@@ -247,6 +250,22 @@ export default function Sidebar() {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="flex justify-between">
+            <Link
+              to="/Dashboard"
+              className="p-2 bg-[#5046e5] rounded-xl w-3/12  text-white flex gap-3 items-center justify-center text-center"
+            >
+              <h1 className="font-bold text-[18px]"> العوده</h1>
+              {/* <Plus /> */}
+            </Link>
+            <Link
+              to="/DataGrows"
+              className="p-2 bg-[#5046e5] rounded-xl w-3/12  text-white flex gap-3 items-center justify-center text-center"
+            >
+              <h1 className="font-bold text-[18px]"> الذهاب الي تحليل النمو</h1>
+              {/* <Plus /> */}
+            </Link>
           </div>
         </main>
       </section>

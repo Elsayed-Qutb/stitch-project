@@ -42,7 +42,7 @@ export default function Container() {
                   className="bg-blue-500 rounded-2xl p-2 group-hover:bg-blue-700 group-hover:text-white "
                 />
               </div>
-              <div className=" group flex gap-4 p-3 items-center justify-center border border-violet-600 rounded-3xl hover:-translate-y-2 hover:shadow-xl transtion duration-300">
+              <div className=" group flex  gap-4 p-3 items-center justify-center border border-violet-600 rounded-3xl hover:-translate-y-2 hover:shadow-xl transtion duration-300">
                 <div className="flex flex-col gap-2">
                   <h1 className="font-bold text-gray-500">الوزن الحالي </h1>
                   <h1 className="font-bold text-[20px]">12.6 كجم</h1>

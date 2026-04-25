@@ -61,9 +61,7 @@ export default function Sidebar() {
         </aside>
         <main className="  mr-0 lg:mr-64 mt-17 p-2 lg:p-5 w-12/12 lg:w-11/12 py-10">
           <div className="container  flex flex-col p-1">
-            <div className=" text-end flex flex-col lg:flex-row-reverse justify-between items-center gap-3  ">
-              
-            </div>
+            <div className=" text-end flex flex-col lg:flex-row-reverse justify-between items-center gap-3  "></div>
 
             <Container></Container>
             <div className="container p-4 lg:p-8 flex flex-col w-full lg:w-12/12  mt-5 rounded-2xl border border-violet-500 ">
@@ -130,7 +128,18 @@ export default function Sidebar() {
                 </div>
               </div>
             </div>
+            
           </div>
+              <div className="flex justify-center mt-6">
+                      <Link
+                        to="/AddBaby"
+                        className="p-2 bg-[#5046e5] rounded-xl w-3/12  text-white flex gap-3 items-center justify-center text-center"
+                      >
+                        <h1 className="font-bold text-[18px]"> العوده</h1>
+                        {/* <Plus /> */}
+                      </Link>
+                     
+                    </div>
         </main>
       </section>
     </div>
