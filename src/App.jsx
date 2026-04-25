@@ -2,6 +2,7 @@ import React from "react";
 import SignIn from "./Pages/SignIn";
 import Dashboard from "./Pages/Dashboard";
 import AddBaby from "./Pages/AddBaby";
+import DataGrows from "./Pages/DataGrows";
 import { Routes, Route } from "react-router-dom";
 
 export default function App() {
@@ -10,6 +11,7 @@ export default function App() {
       <Route path="/" element={<SignIn />} />
       <Route path="/Dashboard" element={<Dashboard />} />
       <Route path="/AddBaby" element={<AddBaby></AddBaby>}></Route>
+      <Route path="/DataGrows" element={<DataGrows></DataGrows>}></Route>
     </Routes>
   );
 }

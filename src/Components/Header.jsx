@@ -32,7 +32,7 @@ export default function Header() {
                 size={30}
               />
             </div>
-            <div class="relative rounded-2xl border border-violet-400 hover:border-violet-600 hover:shadow-md shadow-violet-400/20  ">
+            <div className="relative rounded-2xl border border-violet-400 hover:border-violet-600 hover:shadow-md shadow-violet-400/20  ">
               <input
                 placeholder="Search..."
                 class="input shadow-lg border-gray-300  px-5 py-3  w-56 transition-all focus:w-64 outline-none"

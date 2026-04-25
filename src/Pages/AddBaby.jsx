@@ -5,13 +5,10 @@ import { ChartSpline } from "lucide-react";
 import { UserRoundSearch } from "lucide-react";
 import { CalendarPlus } from "lucide-react";
 import { ClipboardMinus } from "lucide-react";
-import { Plus } from "lucide-react";
-import { UserRoundPlus } from "lucide-react";
-import { ArrowLeft } from "lucide-react";
-import { Lightbulb } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "../Components/Header";
 import { CircleStar } from "lucide-react";
+import { Lock } from "lucide-react";
 
 export default function Sidebar() {
   return (
@@ -23,7 +20,7 @@ export default function Sidebar() {
           className="fixed top-16 right-0 w-64 h-[calc(100vh-64px)] bg-violet-100/20 border border-violet-500 text-white py-8 px-3
   hidden md:block"
         >
-          <div className="container flex flex-col justify-center items-center gap-8 py-6 px-2 ">
+          <div className="container flex flex-col justify-center items-center gap-4 py-4 px-2 ">
             <div className=" flex flex-col items-center text-center gap-1.5">
               <Baby size={55} className="bg-[#5046e5] p-2 rounded-2xl" />
               <h1 className="font-bold text-[24px] text-[#5046e5]">
@@ -50,9 +47,24 @@ export default function Sidebar() {
                 <h1> التقراير</h1>
               </button>
             </div>
-            <button className="p-2 bg-[#5a4be6] rounded-xl w-12/12  flex gap-3 items-center justify-center">
-              <h1 className="font-bold text-[18px]"> عرض النتيجه</h1>
-            </button>
+            <div className="flex flex-col gap-4 w-12/12">
+              <button className="p-2 bg-[#5a4be6] rounded-xl w-12/12  flex gap-3 items-center justify-center">
+                <h1 className="font-bold text-[18px]"> عرض النتيجه</h1>
+              </button>
+
+              <Link
+                to="/DataGrows"
+                className="p-2 bg-[#5a4be6] rounded-xl w-12/12  flex gap-3 items-center justify-center  "
+              >
+                <h1 className="font-bold text-[18px]"> الذهاب الي تحليل النمو</h1>
+              </Link>
+              <button
+                to="/Dashboard"
+                className="p-2 bg-[#5a4be6] rounded-xl w-12/12  flex gap-3 items-center justify-center  "
+              >
+                <h1 className="font-bold text-[18px]"> عوده الي لوحه التحكم</h1>
+              </button>
+            </div>
           </div>
         </aside>
         <main className="  mr-0 lg:mr-64 mt-17 p-4 lg:p-5  lg:w-11/12 py-10">
@@ -146,12 +158,18 @@ export default function Sidebar() {
                   قائمة التطعيمات الوطنية
                 </h1>
                 <nav className="flex gap-4 ">
-                  <h1 className="text-gray hover:bg-violet-200 hover:text-violet-700 hover:font-bold rounded-2xl transition duration-300 p-2">الكل</h1>
-                  <h1 className="text-gray hover:bg-violet-200 hover:text-violet-700 hover:font-bold rounded-2xl transition duration-300 p-2">المكتمله </h1>
-                  <h1 className="text-gray hover:bg-violet-200 hover:text-violet-700 hover:font-bold rounded-2xl transition duration-300 p-2">المفضله</h1>
+                  <h1 className="text-gray hover:bg-violet-200 hover:text-violet-700 hover:font-bold rounded-2xl transition duration-300 p-2">
+                    الكل
+                  </h1>
+                  <h1 className="text-gray hover:bg-violet-200 hover:text-violet-700 hover:font-bold rounded-2xl transition duration-300 p-2">
+                    المكتمله{" "}
+                  </h1>
+                  <h1 className="text-gray hover:bg-violet-200 hover:text-violet-700 hover:font-bold rounded-2xl transition duration-300 p-2">
+                    المفضله
+                  </h1>
                 </nav>
               </div>
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-15 p-2 border-b border-black/30 hover:bg-blue-100 transition duration-300 ">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-15 p-2 border-b border-black/30 hover:bg-green-100 transition duration-300 ">
                 <label class="relative flex items-center cursor-pointer group">
                   <input class="peer sr-only" type="checkbox" />
                   <div class="w-8 h-8 rounded-lg bg-white border-2 border-purple-500 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-purple-500 to-violet-800 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-5 after:h-5 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)]"></div>
@@ -160,7 +178,7 @@ export default function Sidebar() {
                   </span>
                 </label>
 
-                <div className="font-bold text-[18px] text-center">
+                <div className="font-bold text-[18px] text-end lg:text-center">
                   تطعيم عند الولادة
                 </div>
                 <div className="font-semibold text-[18px] text-end text-gray-600">
@@ -171,16 +189,16 @@ export default function Sidebar() {
                   <h1 className="text-green-700">مكتمل</h1>
                 </div>
               </div>
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-15 p-2 border-b border-black/30 hover:bg-blue-100 transition duration-300 ">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-15 p-2 border-b border-black/30 hover:bg-green-100 transition duration-300 ">
                 <label class="relative flex items-center cursor-pointer group">
                   <input class="peer sr-only" type="checkbox" />
-                  <div class="w-8 h-8 rounded-lg bg-white border-2 border-purple-500 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-purple-500 to-violet-800 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-5 after:h-5 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)]"></div>
+                  <div class="w-8 h-8 rounded-lg bg-white border-2 border-purple-500 transition-all duration-300 ease-in-out peer-checked:bg-linear-to-br from-purple-500 to-violet-800 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-5 after:h-5 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)]"></div>
                   <span class="ml-3 text-sm font-medium text-gray-900">
                     Check
                   </span>
                 </label>
 
-                <div className="font-bold text-[18px] text-center">
+                <div className="font-bold text-[18px] text-end lg:text-center">
                   عمر شهرين
                 </div>
                 <div className="font-semibold text-[18px] text-end text-gray-600">
@@ -200,7 +218,7 @@ export default function Sidebar() {
                   </span>
                 </label>
 
-                <div className="font-bold text-[18px] text-center">
+                <div className="font-bold text-[18px] text-end lg:text-center">
                   عمر 9 اشهر{" "}
                 </div>
                 <div className="font-semibold text-[18px] text-end text-violet-600">
@@ -211,16 +229,13 @@ export default function Sidebar() {
                   <h1 className="text-orange-700">قيد الانتظار</h1>
                 </div>
               </div>
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-15 p-2 border-b border-black/30 hover:bg-blue-100 transition duration-300 ">
-                <label class="relative flex items-center cursor-pointer group">
-                  <input class="peer sr-only" type="checkbox" />
-                  <div class="w-8 h-8 rounded-lg bg-white border-2 border-purple-500 transition-all duration-300 ease-in-out peer-checked:bg-gradient-to-br from-purple-500 to-violet-800 peer-checked:border-0 peer-checked:rotate-12 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-5 after:h-5 after:opacity-0 after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSIyMCA2IDkgMTcgNCAxMiI+PC9wb2x5bGluZT48L3N2Zz4=')] after:bg-contain after:bg-no-repeat peer-checked:after:opacity-100 after:transition-opacity after:duration-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)]"></div>
-                  <span class="ml-3 text-sm font-medium text-gray-900">
-                    Check
-                  </span>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-15 p-2 border-b border-black/30 hover:bg-gray-100 transition duration-300 ">
+                <label class="relative flex items-center cursor-pointer group gap-2">
+                  <Lock />
+                  <h2 class="ml-3 text-sm font-medium text-gray-900">Close</h2>
                 </label>
 
-                <div className="font-bold text-[18px] text-center">
+                <div className="font-bold text-[18px] text-end lg:text-center text-gray-700">
                   عمر 12 شهر{" "}
                 </div>
                 <div className="font-semibold text-[18px] text-end text-gray-600">
